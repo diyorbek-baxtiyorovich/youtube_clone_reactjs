@@ -1,7 +1,7 @@
 import { Box, Container, Stack, Typography } from '@mui/material'
 import React, {  useEffect, useState } from 'react'
 import { colors } from '../../constants/color'
-import { Category, Video } from '../'
+import { Category, Videos } from '../'
 import { ApiServices } from '../../service/api.service'
 
 const Main = () => {
@@ -36,7 +36,7 @@ const Main = () => {
             <Typography variant='h4' fontWeight={"bold"} mb={2}>
               {categoryName} <span style={{color: colors.secondary}}>Videos</span>
             </Typography>
-            <Video  videos = {videos} />
+            <Videos  videos = {videos} />
         </Container>
       </Box>
     </Stack>
