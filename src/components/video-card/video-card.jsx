@@ -24,13 +24,13 @@ const VideoCard = ({video}) => {
                         {video?.snippet?.description.slice(0, 50)}...  
                     </Typography>
                 </Link>
-                <>
+                <Link to={`/channel/${video?.snippet?.channelId}`} style={{textDecoration: "none", color: "black"}}>
                     <Stack direction={"row"} position={'absolute'} bottom={"10px"} alignItems={'center'} gap={"5px"}>
                         <Avatar src={video?.snippet?.thumbnails?.high?.url} />
                         <Typography variant='subtitle2' color='gray' >{video?.snippet?.channelTitle}</Typography>
                         <CheckCircle sx={{color: "gray", fontSize: "12px", ml : "5px"}} />
                     </Stack>
-                </>
+                </Link>
             </CardContent>
         </CardActionArea>
     </Card>

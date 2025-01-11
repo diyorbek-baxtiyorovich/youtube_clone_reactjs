@@ -1,5 +1,5 @@
 {
-  "homepage": "https://diyorbek-baxtiyorovich.github.io/youtube_clone_reactjs",
+   "homepage": "/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -20,6 +20,7 @@
     "react-render-html": "^0.6.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -49,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.3.0"
   }
 }
