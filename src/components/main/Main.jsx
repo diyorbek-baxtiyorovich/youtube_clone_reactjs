@@ -10,11 +10,10 @@ const Main = () => {
   const [videos, setVideos] = useState([])
    
   const selectCategoryHandler = (category) => {
-    setCategoryName(category);  
+    setCategoryName(category);
   }
 
   useEffect(() => {
-
     const getData = async () => {
       try {
         const data = await ApiServices.fetching(`search?part=snippet&q=${categoryName}`)
@@ -30,7 +29,7 @@ const Main = () => {
 
   return (
     <Stack>
-      <Category  selectCategoryHender={selectCategoryHandler} selectCategory={categoryName}/>
+      <Category selectCategoryHender={selectCategoryHandler} selectCategory={categoryName}/>
       <Box p={2} sx={{height: '80vh'}}>
         <Container maxWidth="90%">
             <Typography variant='h4' fontWeight={"bold"} mb={2}>

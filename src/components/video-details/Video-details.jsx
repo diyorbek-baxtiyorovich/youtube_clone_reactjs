@@ -13,6 +13,7 @@ const VideoDetails = () => {
   const [error, setError] = useState(null);
   const { id } = useParams();
 
+  // bu useEffect hool orqali video ma'lumotlarini olishimiz mumkin
   useEffect(() => {
     const fetchVideoDetail = async () => {
       try {
@@ -30,6 +31,7 @@ const VideoDetails = () => {
     fetchVideoDetail();
   }, [id]);
 
+  // bu useEffect hool orqali related videos ma'lumotlarini olishimiz mumkin
   useEffect(() => {
     if (!videoDetail) return;
 
@@ -48,7 +50,7 @@ const VideoDetails = () => {
   }, [videoDetail, id]);
 
   const [comments, setComments] = useState([]);
-  
+  // bu useEffect hool orqali video commentlarini olishimiz mumkin
   useEffect(() => {
     const fetchComments = async () => {
       try {
@@ -63,6 +65,7 @@ const VideoDetails = () => {
     };
     fetchComments();
   }, [id]);
+  // agar error bo'lsa uni chiqarib beramiz
   if (error) {
     return (
       <Box minHeight="90vh" display="flex" justifyContent="center" alignItems="center">
@@ -72,6 +75,7 @@ const VideoDetails = () => {
       </Box>
     );
   }
+  // agar videoDetail bo'lmagan bo'lsa loading qilib ko'rsatamiz
 
   if (!videoDetail) {
     return (
@@ -81,12 +85,14 @@ const VideoDetails = () => {
     );
   }
 
+  //  agar videoDetail bo'lsa uni ma'lumotlarini olib chiqamiz
   const { snippet = {}, statistics = {} } = videoDetail;
   const { title, description, tags } = snippet;
   const viewCount = statistics.viewCount || 0;
   const likeCount = statistics.likeCount || 0;
   const commentCount = statistics.commentCount || 0;
 
+  // agar relativesVideo bo'lsa uni ma'lumotlarini olib chiqamiz
   return (
     <Box minHeight="90vh" mb={10}>
       <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }}>

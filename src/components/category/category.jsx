@@ -16,5 +16,5 @@ const Category = ({selectCategoryHender, selectCategory}) => {
       </Stack>
     )
   }
-
+  
 export default Category
