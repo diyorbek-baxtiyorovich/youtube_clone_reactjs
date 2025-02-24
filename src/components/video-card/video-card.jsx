@@ -13,7 +13,7 @@ import { colors } from "../../constants/color";
 import moment from "moment";
 
 const VideoCard = ({ video }) => {
-  if (!video?.snippet) return null; 
+  if (!video?.snippet) return null;
 
   return (
     <Card
@@ -47,10 +47,7 @@ const VideoCard = ({ video }) => {
             to={`/video-details/${video.id?.videoId}`}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <Typography
-              my={"5px"}
-              sx={{ color: "gray", fontSize: "12px" }}
-            >
+            <Typography my={"5px"} sx={{ color: "gray", fontSize: "12px" }}>
               {moment(video.snippet?.publishedAt).fromNow()}
             </Typography>
             <Typography
@@ -86,7 +83,9 @@ const VideoCard = ({ video }) => {
               <Typography variant="subtitle2" color="gray">
                 {video.snippet?.channelTitle}
               </Typography>
-              <CheckCircle sx={{ color: "gray", fontSize: "12px", ml: "5px" }} />
+              <CheckCircle
+                sx={{ color: "gray", fontSize: "12px", ml: "5px" }}
+              />
             </Stack>
           </Link>
         </CardContent>
